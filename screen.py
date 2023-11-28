@@ -16,5 +16,5 @@ class Screen:
         self.screen.onkeypress(right_pad.paddle_up, "Up")
         self.screen.onkeypress(right_pad.paddle_down, "Down")
     
-    def refresh(self):
+    def update(self):
         self.screen.update()

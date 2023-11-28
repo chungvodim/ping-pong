@@ -9,7 +9,7 @@ sc = screen.Screen(1000, 600)
 sc.listen(left_pad, right_pad)
 
 while True:
-    sc.refresh()
-    pp_ball.start()
+    sc.update()
+    pp_ball.move()
     pp_ball.check_border_collision(sc.width, sc.height)
     pp_ball.check_paddle_collision(left_pad, right_pad)

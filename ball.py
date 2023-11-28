@@ -11,7 +11,7 @@ class Ball:
         self.ball.dx = 5
         self.ball.dy = -5
 
-    def start(self):
+    def move(self):
         self.ball.setx(self.ball.xcor() + self.ball.dx)
         self.ball.sety(self.ball.ycor() + self.ball.dy)
 
