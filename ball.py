@@ -15,24 +15,24 @@ class Ball:
         self.ball.setx(self.ball.xcor() + self.ball.dx)
         self.ball.sety(self.ball.ycor() + self.ball.dy)
 
-    def check_borders(self):
-        if self.ball.ycor() > 280:
-            self.ball.sety(280)
+    def check_border_collision(self, screen_width, screen_height):
+        if self.ball.ycor() > (screen_height / 2):
+            self.ball.sety((screen_height / 2))
             self.ball.dy *= -1
     
-        if self.ball.ycor() < -280:
-            self.ball.sety(-280)
+        if self.ball.ycor() < -(screen_height / 2):
+            self.ball.sety(-(screen_height / 2))
             self.ball.dy *= -1
     
-        if self.ball.xcor() > 500:
+        if self.ball.xcor() > (screen_width / 2):
             self.ball.goto(0, 0)
             self.ball.dy *= -1
         
-        if self.ball.xcor() < -500:
+        if self.ball.xcor() < -(screen_width / 2):
             self.ball.goto(0, 0)
             self.ball.dy *= -1
 
-    def check_collision(self, left_pad, right_pad):
+    def check_paddle_collision(self, left_pad, right_pad):
         if (self.ball.xcor() > 360 and self.ball.xcor() < 370) and (self.ball.ycor() < right_pad.ycor() + 40 and self.ball.ycor() > right_pad.ycor() - 40):
             self.ball.setx(360)
             self.ball.dx*=-1

@@ -1,11 +1,13 @@
 import turtle
 
 class Screen:
-    def __init__(self):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
         self.screen = turtle.Screen()
         self.screen.title("Ping Pong game")
         self.screen.bgcolor("white")
-        self.screen.setup(width=1000, height=600)
+        self.screen.setup(width=width, height=height)
 
     def listen(self, left_pad, right_pad):
         self.screen.listen()
